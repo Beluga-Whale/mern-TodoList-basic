@@ -19,7 +19,6 @@ function App() {
               <div className="menu font-mono">
                 <ul className='flex justify-between font-bold w-64 text-2xl' >
                   <li ><Link to='/create' >Create</Link></li>
-                  <li><Link to='/edit' >Edit</Link></li>
                 </ul>
               </div>
             </div>
@@ -28,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ListTodo />} />
           <Route path='/create' element={<Create />} />
-          <Route path='/edit' element={<Edit />} />
+          <Route path='/edit/:id' element={<Edit />} />
         </Routes>
       </div>
     </Router>
