@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import Create from './components/Create';
+import Edit from './components/Edit';
+import ListTodo from './components/ListTodo';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='' >
+        <nav className="bg-[#1a254a] text-white h-20">
+          <div className="mx-auto max-w-7xl h-full">
+            <div className="flex justify-between h-full items-center">
+              <div className="logo">
+                <h2 className='font-mono font-bold text-5xl' >
+                  <Link to='/' >Beluga</Link>
+                </h2>
+              </div>
+              <div className="menu font-mono">
+                <ul className='flex justify-between font-bold w-64 text-2xl' >
+                  <li ><Link to='/create' >Create</Link></li>
+                  <li><Link to='/edit' >Edit</Link></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <Routes>
+          <Route path="/" element={<ListTodo />} />
+          <Route path='/create' element={<Create />} />
+          <Route path='/edit' element={<Edit />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
