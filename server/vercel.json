@@ -2,8 +2,7 @@
     "version": 1,
     "builds": [
         {
-            "src": "server.js",
-            "usr": "@now/node"
+            "src": "server.js"
         }
     ],
     "routes": [
